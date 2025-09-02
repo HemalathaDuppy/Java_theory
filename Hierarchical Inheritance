@@ -1,0 +1,41 @@
+package com.sample;
+class Animal{
+	void eat() {
+		System.out.println("This Animal eats food.");
+	}
+}
+
+class Dog extends Animal{
+	void bark() {
+		System.out.println("The dog barks.");
+	}
+}
+
+class cat extends Animal{
+	void meow() {
+		System.out.println("The cat meows.");
+	}
+}
+
+public class HierarchialInheritance {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Dog d = new Dog();
+		d.eat();
+		d.bark();
+		cat c = new cat();
+		c.eat();
+		c.meow();
+
+	}
+
+}
+
+
+OUTPUT:
+This Animal eats food.
+The dog barks.
+This Animal eats food.
+The cat meows.
+
