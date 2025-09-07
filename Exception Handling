@@ -1,0 +1,47 @@
+package com.sample;
+
+//Demonstrating throwable,error,exceptions(checked and unchecked)
+public class Exception {
+
+	public static void main(String[] args) {
+		//1. Throwable-base class(we won't throw it directly but show hierarchy)
+		System.out.println("Throwable is the parent of Error and Exception");
+		//2.Error(unchecked-serious problems,usually not caught)
+		try {
+			throw new OutOfMemoryError ("Simulated Error!");
+		}catch(Error e) {
+			System.out.println("Caught Error:"+e);
+		}
+		//3.Runtime Exception (Unchecked Exception)
+		try {
+			int num=10/0; //Arithmetic Exception
+		}catch (ArithmeticException re) {
+			System.out.println("Caught Runtime Exception:"+ re);
+		}
+		//4.Other Unchecked Expression.
+		try {
+			String str = null;
+			str.length( ); //Null Pointer Exception
+		}catch (NullPointerException npe) {
+			System.out.println("Caught Null Pointer Exception:"+npe);
+		}
+		//5.Checked Exception (must handle or declare)
+		try {
+			Thread.sleep(500);//Interrupted Exception (checked)
+			System.out.println("Checked Exception handled successfully.");
+		}catch(InterruptedException ie) {
+			System.out.println("Caight checked Exception:"+ie);
+		}
+		System.out.println("Program executed successfully! ");
+
+	}
+
+}
+
+OUTPUT:
+Throwable is the parent of Error and Exception
+Caught Error:java.lang.OutOfMemoryError: Simulated Error!
+Caught Runtime Exception:java.lang.ArithmeticException: / by zero
+Caught Null Pointer Exception:java.lang.NullPointerException: Cannot invoke "String.length()" because "str" is null
+Checked Exception handled successfully.
+Program executed successfully! 
